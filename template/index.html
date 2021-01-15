@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css" rel="stylesheet" />
+
+    <title>RECRUTEMENT OC DIVIN</title>
+</head>
+<style>
+    body{
+        overflow-x: hidden;
+    }
+</style>
+<body>
+    <header>
+
+        <!-- Navbar -->
+
+        <!-- Background image -->
+        <div class="p-5 text-center bg-image" style="
+            background-image: url('https://cdn.pixabay.com/photo/2020/01/21/17/17/hr-process-4783430_960_720.png');
+            height: 400px;
+          ">
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div class="text-white">
+                        <h1 class="mb-3">RECRUTEMENT AIESEC IN ABIDJAN SUD</h1>
+                        <a class="btn btn-outline-light btn-lg" role="button" href="{% url 'inscrire' %}">inscription</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Background image -->
+    </header>
+    <br>
+    <!-- AIESEC information -->
+    <div class="container">
+        <div class="card mb-3" style="padding: 20px 10px;">
+            <div class="card-body">
+                <p class="card-text">
+                    AIESEC est une organisation mondiale
+                    crée en 1948 après le seconde guerre
+                    mondiale dans le but de permettre aux
+                    jeunes de dévélopper leur leadership
+                    afin d’éviter à l’avénir la tragedie des
+                    deux guerre mondiales. Sa vision est
+                    «PEACE AND FULFILLMENTOF
+                    HUMANKID’S POTENTIAL».Aujourd’hui,
+                    grâce à sa politique de fonctionnalité,
+                    AIESEC est la troisième organisation la
+                    mieux organisée au monde.AIESEC est
+                    independante, a but non lucratif,aucune
+                    discrimanation,non politique.
+                </p>
+                <p>
+                    Pour atteindre sa vision, AIESEC met en place un environnement challengant autour 
+                    des jeunes afin qu'ils puissent dévélopper leur leadership dans la pratique. Parmis
+                    ces avantages nous pouvons citer:
+                </p>
+                <p>
+                    <ul>
+                        <li>Des stages volontariats à l'extérieur</li>
+                        <li>Des stages professionnels à l'extérieur</li>
+                        <li>Des stages locaux</li>
+                        <li>Des comités d'organisation</li>
+                        <li>Des projets internes</li>
+                        <li>Des travaux en équipe</li>
+                        <li>Etc...</li>
+                    </ul>
+                </p>
+            </div>
+            <a href="{% url 'inscrire' %}" style="position: relative; left: 40%;">
+                <button type="button" class="btn btn-outline-info" data-mdb-ripple-color="dark">
+                    S'INSCRIRE
+                </button>
+            </a>
+        </div>
+        
+    </div>
+    {% block content %}
+    {% endblock %}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
+</body>
+
+</html>

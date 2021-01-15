@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css" rel="stylesheet" />
+
+    <title>RECRUTEMENT OC DIVIN</title>
+</head>
+<style>
+    body {
+        overflow-x: hidden;
+    }
+
+    #app {
+        padding: 40px 0;
+    }
+
+    .timeline {
+        margin: 30px 0;
+        list-style-type: none;
+        display: flex;
+        padding: 0;
+        text-align: center;
+    }
+
+    .timeline li {
+        transition: all 200ms ease-in;
+    }
+
+    .timestamp {
+        width: 100%; // for flexible width
+        margin-bottom: 20px;
+        padding: 0px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: 100;
+    }
+
+    .status {
+        padding: 0px 40px;
+        display: flex;
+        justify-content: center;
+        border-top: 4px solid #fb7c54;
+        position: relative;
+        transition: all 200ms ease-in;
+    }
+
+    .status span {
+        font-weight: 600;
+        padding-top: 30px;
+    }
+
+    .status span:before {
+        content: '';
+        width: 25px;
+        height: 25px;
+        background-color: white;
+        border-radius: 25px;
+        border: 4px solid #fb7c54;
+        position: absolute;
+        top: -15px;
+        left: calc(50% - 12px); // align circle to center
+        transition: all 200ms ease-in;
+    }
+
+    .swiper-control {
+        text-align: right;
+    }
+
+    .swiper-container {
+        width: 100%;
+        height: 250px;
+        margin: 10px 0;
+        overflow: hidden;
+        padding: 0 20px 30px 20px;
+    }
+
+    .swiper-slide {
+        width: 200px;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .swiper-slide:nth-child(2n) {
+        width: 20%;
+    }
+
+    .swiper-slide:nth-child(3n) {
+        width: 40%;
+    }
+
+    h5 {
+        text-align: center;
+    }
+
+    .timestamp {
+        margin: 20px 1px;
+    }
+
+    .timeline-main {
+        display: none;
+    }
+
+    /* responsive */
+    @media only screen and (max-width: 600px) {
+        #app {
+            display: none
+        }
+
+        .timeline-main {
+            display: inline-block;
+            font-size: 18px;
+        }
+
+        span {
+            text-transform: uppercase;
+            color: #fb7c54;
+        }
+
+    }
+</style>
+
+<body>
+    <header>
+
+        <!-- Navbar -->
+
+        <!-- Background image -->
+        <div class="p-5 text-center bg-image" style="
+            background-image: url('https://cdn.pixabay.com/photo/2020/01/21/17/17/hr-process-4783430_960_720.png');
+            height: 400px;
+          ">
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+                <div class="d-flex justify-content-center align-items-center h-100">
+
+                </div>
+            </div>
+        </div>
+        <!-- Background image -->
+    </header>
+    <br>
+
+    <!-- Timeline light-->
+
+    <div class="timeline-main">
+        <h5>TIMELINE DE LA PROCEDURE DE RECRUTEMENT</h5>
+        <p style="text-align: center;">NB: Votre recrutement se fera selon ce calendrier:</p>
+        <ul class="timeline-light" style="list-style-type:square;">
+            <li class="timeline-light-item">
+                <div class="timeline-light-item-tail"></div>
+                <div class="timeline-light-item-head"></div>
+                <div class="timeline-light-item-content">
+                    <span>Entretien:</span> 23/01 et 30/01
+                </div>
+            </li>
+            <li class="timeline-light-item timeline-light-item-dashed timeline-light-item-light">
+                <div class="timeline-light-item-tail"></div>
+                <div class="timeline-light-item-head"></div>
+                <div class="timeline-light-item-content">
+                    <span>Induction 1:</span>06 Fevrier
+                </div>
+            </li>
+            <li class="timeline-light-item timeline-light-item-danger">
+                <div class="timeline-light-item-tail"></div>
+                <div class="timeline-light-item-head"></div>
+                <div class="timeline-light-item-content">
+                    <span>Local Training Seminar:</span>12 Fevrier-14 Fevrier
+                </div>
+            </li>
+            <li class="timeline-light-item timeline-light-item-secondary timeline-light-item-loading">
+                <div class="timeline-light-item-tail"></div>
+                <div class="timeline-light-item-head"></div>
+                <div class="timeline-light-item-content">
+                    <span>Induction 2:</span>19 Fevrier
+                </div>
+            </li>
+        </ul>
+
+
+    </div>
+    <!-- Timeline light-->
+
+    <div id="app" class="container">
+        <h5>PROCEDURE DE RECRUTEMENT</h5>
+        NB: Votre recrutement se fera selon ce calendrier:
+        <div class="row">
+            <div class="col-md-12">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper timeline">
+                        <div class="swiper-slide">
+                            <div class="timestamp">
+                                <span class="date">23/01 et 30/01<span>
+                            </div>
+                            <div class="status">
+                                <span>Entretien</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="timestamp">
+                                <span class="date">06 Fevrier<span>
+                            </div>
+                            <div class="status">
+                                <span>Induction 1</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="timestamp">
+                                <span class="date">12 Fevrier - 14 Fevrier<span>
+                            </div>
+                            <div class="status">
+                                <span>Local Training Seminar</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="timestamp">
+                                <span class="date">19 Fevrier<span>
+                            </div>
+                            <div class="status">
+                                <span>Induction 2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Formulaire d'inscription -->
+    <!-- Default form login -->
+    <div class="container">
+        <form class="text-center border border-light p-5" method="POST">
+            {% csrf_token %}
+            <p class="h4 mb-4">Inscription</p>
+            {% for message in messages %}
+            <div style="background-color: red; opacity: 0.5;">
+                <span style="color: white; font-size: 22px;">{{message}}</span>
+            </div>
+            {% endfor %}
+            <br>
+            <!-- Email -->
+            <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" name="email">
+
+            <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Nom" name="nom">
+
+            <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Prenom" name="prenom">
+
+            <input type="tel" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Numero de téléphone"
+                name="numero">
+
+            <input type="tel" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Numero whatsapp"
+                name="whatsapp">
+
+            <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Lieu de residence"
+                name="lieu">
+
+            <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Votre sexe (Ex:M)"
+                name="sexe">
+
+            <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Votre filière"
+                name="filiere">
+
+            <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Votre dernier diplôme"
+                name="diplome">
+
+            <!-- Sign in button -->
+            <button class="btn btn-success btn-block my-4" type="submit">S'inscrire</button>
+
+        </form>
+    </div>
+    <!-- Default form login -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
+</body>
+
+</html>
