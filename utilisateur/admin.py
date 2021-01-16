@@ -5,7 +5,7 @@ from django.contrib import admin
 from .models import Prospects,Delegate
 
 class ProspectsAdmin(admin.ModelAdmin):
-    list_display=('email','nom','prenom','numero1','numero2','lieu','sexe','filiere','diplome')
+    list_display=('email','nom','prenom','numero1','numero2','lieu','sexe','filiere','diplome','date')
 
 class DelegateAdmin(admin.ModelAdmin):
     list_display=('delegue','date',)

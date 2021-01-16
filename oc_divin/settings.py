@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'root',
     'utilisateur',
+    'django_inlinecss',
 ]
 
 MIDDLEWARE = [
@@ -152,6 +153,14 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# Configuration Email
+
+EMAIL_HOST="smtp.gmail.com"
+EMAIL_USE_TLS=True
+EMAIL_PORT=587
+EMAIL_HOST_USER="diomandedroh79@gmail.com"
+EMAIL_HOST_PASSWORD="PYTH79172617"
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())

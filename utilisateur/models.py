@@ -12,6 +12,7 @@ class Prospects(models.Model):
     sexe=models.CharField(verbose_name="Sexe",max_length=255)
     filiere=models.CharField(verbose_name="Filière",max_length=255)
     diplome=models.CharField(verbose_name="Diplôme",max_length=255)
+    date=models.DateField()
 
     REQUIRED_FIELDS='__all__'
 

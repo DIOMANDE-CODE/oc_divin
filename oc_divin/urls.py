@@ -19,13 +19,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from root.views import index,merci
-from utilisateur.views import prospect
+from utilisateur.views import prospect,test
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index,name="index"),
     path('inscription/',prospect,name='inscrire'),
     path('remerciement/',merci,name='remerciement'),
+    path('test/',test),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
