@@ -40,7 +40,7 @@ def prospect(request):
                 ),
                 settings.EMAIL_HOST_USER,
                 [email],
-                fail_silently=True
+                fail_silently=False
             )
             
             # Create prospect
