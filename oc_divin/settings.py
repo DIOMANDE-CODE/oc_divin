@@ -99,7 +99,7 @@ WSGI_APPLICATION = 'oc_divin.wsgi.application'
 #     }
 # }
 
-DATABASES['default'] = {
+DATABASES = {
     'default':dj_database_url.config()
 }
 
