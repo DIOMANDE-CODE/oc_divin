@@ -1,0 +1,17 @@
+disable:
+heroku config:set DISABLE_COLLECTSTATIC=1
+
+deploy:
+git push heroku master
+
+run migrations:
+heroku run python manage.py migrate
+
+run collecting bower:
+heroku run 'bower install --config.interactive=false;grunt prep;python manage.py collectstatic --noinput'
+
+enable collectstatic:
+heroku config:unset DISABLE_COLLECTSTATIC
+
+try your own:
+heroku run python manage.py collectstatic
