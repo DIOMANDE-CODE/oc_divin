@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,9 +25,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'x!lui&$t#&bm^=n4(urokryr6kwu*%r_)&3mf3#&wq=1t8c3sx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['ocrecrutement.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['*']
+
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 10000
 
 
 # Application definition
@@ -43,7 +47,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -85,19 +88,18 @@ WSGI_APPLICATION = 'oc_divin.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'oc_divin',
-        'USER': 'postgres',
-        'PASSWORD': '40398854',
-        'HOST': 'localhost',
-        'PORT': '5432'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'oc_divin',
+#         'USER': 'postgres',
+#         'PASSWORD': '40398854',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
+#     }
+# }
 
-import dj_database_url
-DATABASES = {
+DATABASES['default'] = {
     'default':dj_database_url.config()
 }
 
@@ -138,16 +140,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-STATICFILES_DIRS = ()
+STATIC_ROOT = 'staticfiles'
+# STATICFILES_DIRS = ()
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # STATIC_ROOT is the folder where static files will be stored after using manage.py collectstatic
 # Only used when deployment (not used during development)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
