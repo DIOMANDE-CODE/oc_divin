@@ -88,20 +88,20 @@ WSGI_APPLICATION = 'oc_divin.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'oc_divin',
-#         'USER': 'postgres',
-#         'PASSWORD': '40398854',
-#         'HOST': 'localhost',
-#         'PORT': '5432'
-#     }
-# }
-
 DATABASES = {
-    'default':dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'oc_divin',
+        'USER': 'postgres',
+        'PASSWORD': '40398854',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
 }
+
+# DATABASES = {
+#     'default':dj_database_url.config()
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -159,7 +159,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS=True
 EMAIL_HOST="smtp.gmail.com"
 EMAIL_HOST_USER="diomandedroh79@gmail.com"
-EMAIL_HOST_PASSWORD="PYTH79172617"
+EMAIL_HOST_PASSWORD="flfixriokesylttp"
 EMAIL_PORT=587
 
 
