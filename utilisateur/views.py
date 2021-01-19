@@ -24,6 +24,9 @@ def prospect(request):
         diplome=request.POST['diplome']
         naissance=request.POST['naissance']
 
+        user=Prospects.objects.get(email=email)
+
+
         if email=="" or nom=="" or prenom=="" or numero1=="" or numero2=="" or lieu=="" or sexe=="" or filiere=="" or diplome=="" or naissance=="":
             messages.info(request,"Tous les champs sont obligatoires")
             return render(request,"inscription.html")
