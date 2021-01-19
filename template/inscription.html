@@ -237,6 +237,7 @@
         <form class="text-center border border-light p-5" method="POST">
             {% csrf_token %}
             <p class="h4 mb-4">Inscription</p>
+            <span style="color: red; font-size: 14px;">* Tous les champs sont obligatoires</span>
             {% for message in messages %}
             <div style="background-color: red; opacity: 0.5;">
                 <span style="color: white; font-size: 22px;">{{message}}</span>
@@ -250,7 +251,7 @@
 
             <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Prenom" name="prenom">
 
-            <input type="tel" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Numero de téléphone"
+            <input type="tel" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Numero de téléphone(Ex:xxxxxxxx)"
                 name="numero">
 
             <input type="tel" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Numero whatsapp"
