@@ -28,7 +28,7 @@ def prospect(request):
             messages.info(request,"Cet email existe déja!")
             return render(request,"inscription.html")
 
-        if email=="" or nom=="" or prenom=="" or numero1=="" or numero2=="" or lieu=="" or sexe=="" or filiere=="" or diplome=="" or naissance=="":
+        elif email=="" or nom=="" or prenom=="" or numero1=="" or numero2=="" or lieu=="" or sexe=="" or filiere=="" or diplome=="" or naissance=="":
             messages.info(request,"Tous les champs sont obligatoires")
             return render(request,"inscription.html")
 
