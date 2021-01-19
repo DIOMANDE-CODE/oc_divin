@@ -88,20 +88,20 @@ WSGI_APPLICATION = 'oc_divin.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'oc_divin',
-        'USER': 'postgres',
-        'PASSWORD': '40398854',
-        'HOST': 'localhost',
-        'PORT': '5432'
-    }
-}
-
 # DATABASES = {
-#     'default':dj_database_url.config()
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'oc_divin',
+#         'USER': 'postgres',
+#         'PASSWORD': '40398854',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
+#     }
 # }
+
+DATABASES = {
+    'default':dj_database_url.config()
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
