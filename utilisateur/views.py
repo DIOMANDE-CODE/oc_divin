@@ -8,6 +8,9 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.template.loader import get_template
 from django.template import Context
+from django.core.mail import EmailMessage
+from templated_email import send_templated_mail
+
 # Create your views here.
 
 def prospect(request):
@@ -31,19 +34,16 @@ def prospect(request):
 
         else:
             # Send mail
-            send_mail(
-                "Merci pour votre inscription",
-                get_template('mail.html').render(
-                    {
-                        'nom':nom,
-                        'prenom':prenom,
-                    }
-                ),
-                settings.EMAIL_HOST_USER,
-                [email],
-                fail_silently=False
-            )
-            
+            boite=send_templated_mail(
+                subject="Merci pour votre inscription",
+                template_name='mail',
+                from_email=settings.EMAIL_HOST_USER,
+                recipient_list=[email],
+                context={
+                'nom':nom,
+                'prenom':prenom
+                },
+)
             # Create prospect
 
             delegate=Prospects.objects.create(email=email,nom=nom,prenom=prenom,numero1=numero1,numero2=numero2,lieu=lieu,sexe=sexe,filiere=filiere,diplome=diplome,date=naissance)

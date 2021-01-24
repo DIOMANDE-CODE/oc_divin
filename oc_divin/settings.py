@@ -154,7 +154,7 @@ STATICFILES_DIRS = [
 ]
 
 # Configuration Email
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+TEMPLATED_EMAIL_BACKEND = 'templated_email.backends.vanilla_django'
 
 EMAIL_USE_TLS=True
 EMAIL_HOST="smtp.gmail.com"
